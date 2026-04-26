@@ -8,9 +8,9 @@ jobs:
       - uses: actions/setup-python@5
         with:
           python-version: "3.x"
-        - run: pip install bandit
-        - run: bandit -r . -f html -o report.html --exit-zero
-        -uses: actions.upload-artifact@v4
+      - run: pip install bandit
+      - run: bandit -r . -f html -o report.html --exit-zero
+      - uses: actions/upload-artifact@v4
         with:
           name: report
           path: report.html
